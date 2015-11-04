@@ -1,0 +1,12 @@
+[user]
+	email = mdiaz.tello@gmail.com
+	name = Michael Diaz-Tello
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[giggle]
+	main-window-maximized = false
+	main-window-geometry = 1337x1273+428+0

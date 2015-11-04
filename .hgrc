@@ -1,0 +1,13 @@
+# My Mercurial config file
+[ui]
+username = Michael Diaz-Tello <mdiaz.tello@gmail.com>
+editor = vim
+
+[merge-patterns]
+** = filemerge
+
+[merge-tools]
+filemerge.executable = vim
+filemerge.args = -d $local
+filemerge.checkchanged = true
+filemerge.gui = true
