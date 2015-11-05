@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/zorak/projects/programs/compiler/mcc_code_gen_prelim/tests/lexer_tests'
-let g:netrw_dirhist_2='/home/zorak/projects/programs/compiler/mcc_code_gen_prelim/tests'
-let g:netrw_dirhist_3='/home/zorak/projects/custom_cpu'
-let g:netrw_dirhist_4='/home/zorak/mount/repository/programming_practice/practice/embedded_systems_practice/pic_practice/pic16f1827/blink_led.X'
-let g:netrw_dirhist_5='/home/zorak/projects/programs/compiler/mcc'
-let g:netrw_dirhist_6='/home/zorak/projects/programs/programming_practice/c_practice/tdd/TddC-CircularBuffer/src'
-let g:netrw_dirhist_7='/home/zorak/projects/programs/programming_practice/c_practice/tdd/TddC-CircularBuffer/src/util'
