@@ -1,6 +1,31 @@
-"setup pathogen for easy vim plugin management
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
+
+" VUNDLE INITIALIZATION STARTS HERE *********************************
+
+" The following was taken from the Vundle installation instructions at
+" https://github.com/VundleVim/Vundle.vim
+set nocompatible              "leave vi mode to use vim extensions
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'     "Vim wrapper/interface to git
+Plugin 'kien/ctrlp.vim'         "fuzzy matching file finder
+Plugin 'scrooloose/nerdtree'    "file navigator using a tree structure
+Plugin 'rking/ag.vim'           "Ag (silver searcher) frontend for vim
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" VUNDLE INITIALIZATION ENDS HERE ***********************************
 
 set cb=unnamed "use system clipboard for copy/paste
 
@@ -14,7 +39,6 @@ set expandtab       "expands tab characters into space characters of equivalent 
 
 "set guioptions-=m "remove menubar from gvim
 set guioptions-=T       "remove buttons bar from gvim
-set nocompatible        "leave vi mode to use vim extensions
 set foldmethod=syntax   "folds will occur around curly braces in C
 set background=dark
 set number              "enable numbered lines in left margin
@@ -50,7 +74,7 @@ noremap ,r0 kmmj%''dd''dd'm
 "char as it does without the h
 inoremap jj <ESC>
 
-filetype plugin on
+"filetype plugin on
 
 syn region MySkip contained start="^\s*#\s*\(if\>\|ifdef\>\|ifndef\>\)" skip="\\$" end="^\s*#\s*endif\>" contains=MySkip
 
