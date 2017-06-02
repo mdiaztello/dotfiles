@@ -69,6 +69,15 @@ noremap ,i0 dO#endif<Esc>PO#if 0<Esc>
 ",r0
 noremap ,r0 kmmj%''dd''dd'm
 
+"find in c files and disable auto-jumping to the first result
+noremap ,fc "ayiw :vimgrep /\<<C-r>a\>/gj **/*.c <enter> :cw <enter>
+
+"find in h files and disable auto-jumping to the first result
+noremap ,fh "ayiw :vimgrep /\<<C-r>a\>/gj **/*.h <enter> :cw <enter>
+
+"find in all files and disable auto-jumping to the first result
+noremap ,fa "ayiw :vimgrep /\<<C-r>a\>/gj **/*.c **/*.h <enter> :cw <enter>
+
 "This allows me to press 'jj' as a substitute for <Esc> when in insert mode
 "The 'h' at the end allows the escape to occur without moving forward by one
 "char as it does without the h
