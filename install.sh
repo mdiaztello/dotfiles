@@ -19,11 +19,18 @@ function install_vundle
     vim +PluginInstall +qall
 }
 
+function install_xmonad_config
+{
+    mkdir -p ~/.xmonad
+    cp xmonad.hs ~/.xmonad/
+}
+
 
 function main
 {
     install_dotfiles
     install_vundle
+    install_xmonad_config
 }
 
 
