@@ -20,12 +20,18 @@ Plugin 'tpope/vim-fugitive'     "Vim wrapper/interface to git
 Plugin 'kien/ctrlp.vim'         "fuzzy matching file finder
 Plugin 'scrooloose/nerdtree'    "file navigator using a tree structure
 Plugin 'rking/ag.vim'           "Ag (silver searcher) frontend for vim
+Plugin 'jpalardy/vim-slime'      
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " VUNDLE INITIALIZATION ENDS HERE ***********************************
+"
+
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
 
 set cb=unnamed "use system clipboard for copy/paste
 
@@ -44,6 +50,7 @@ set background=dark
 set number              "enable numbered lines in left margin
 set tabpagemax=100      "allow up to 100 tabs at a time
 colorscheme torte       "change syntax highlighting and background colors
+
 
 "change 'jump to previous tag' binding so that we don't clobber it
 "note that we are clobbering the 'scroll screen without moving cursor'
@@ -78,6 +85,9 @@ noremap ,fh "ayiw :vimgrep /\<<C-r>a\>/gj **/*.h <enter> :cw <enter>
 "find in all files and disable auto-jumping to the first result
 noremap ,fa "ayiw :vimgrep /\<<C-r>a\>/gj **/*.c **/*.h <enter> :cw <enter>
 
+"find in all files and disable auto-jumping to the first result
+noremap ,fp "ayiw :vimgrep /\<<C-r>a\>/gj **/*.py <enter> :cw <enter>
+
 "This allows me to press 'jj' as a substitute for <Esc> when in insert mode
 "The 'h' at the end allows the escape to occur without moving forward by one
 "char as it does without the h
@@ -110,3 +120,6 @@ function! ClearCommentDefine()
   syn clear MyCommentOut2
 endfunction
 
+
+"transparent background
+hi Normal guibg=NONE ctermbg=NONE
