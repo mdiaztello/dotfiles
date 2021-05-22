@@ -64,6 +64,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((noModMask, xK_Super_L), spawn $ XMonad.terminal conf)
 
+    -- launch firefox
+    , ((modm .|. shiftMask, xK_f     ), spawn "firefox")
+
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
 
@@ -113,7 +116,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_l     ), sendMessage Expand)
 
     -- Push window back into tiling
-    , ((modm,               xK_t     ), withFocused $ windows . W.sink)
+    , ((modm .|. shiftMask, xK_t     ), withFocused $ windows . W.sink)
 
     -- Increment the number of windows in the master area
     , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
@@ -251,7 +254,7 @@ myLogHook = return ()
 myStartupHook = do
         spawnOnce "xrandr --output Virtual1 --mode 1920x1280"
         spawnOnce "nitrogen --restore &"
-        -- spawnOnce "picom &"
+        spawnOnce "picom &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
